@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $address_4 = $_POST['address_4'];
     $address_5 = $_POST['address_5'];
 
-    $stmt = $conn->prepare("INSERT INTO users (email, password, name) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $email, $password, $name);
+    $stmt = $conn->prepare("INSERT INTO users (fname, lname, phone, qualification, address_1, address_2, address_3, address_4, address_5, email, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssssssssss", $fname, $lname, $phone, $qualification, $address_1, $address_2, $address_3, $address_4, $address_5, $email, $password);
     if ($stmt->execute()) {
         header("Location: login.php");
         exit();
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>www.tamil'slogin.com</title>
 </head>
 <body class="w-full h-screen flex justify-center items-center bg-sky-200">
-    <form class="w-1/2 flex flex-col justify-center items-center gap-5 bg-white opacity-70 rounded shadow-2xl shadow-gray-500" action="register.php" method="POST">
+    <form class="w-1/2 flex flex-col justify-center items-center gap-5 bg-white  rounded shadow-2xl shadow-gray-500" action="register.php" method="POST">
         <h2 class="text-2xl mt-6">User Register</h2>
         <div class="flex justify-between items-center gap-3">
             <input class="w-[250px] h-8 border p-4 focus:ring-1 ring-pink-500 outline-none rounded-sm "  type="text" name="fname" placeholder="First Name" required>
