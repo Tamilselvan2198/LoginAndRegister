@@ -24,9 +24,12 @@ $user = $result->fetch_assoc();
     <title>User Profile</title>
 </head>
 <body>
-    <h2>Welcome, <?php echo htmlspecialchars($user['name']); ?>!</h2>
-    <p>Email: <?php echo htmlspecialchars($user['email']); ?></p>
-    <p>User ID: <?php echo htmlspecialchars($user['id']); ?></p>
+    <h2>Welcome , <?php echo htmlspecialchars($user['name']); ?>!</h2>
+    <p>Email id: <?php echo htmlspecialchars($user['email']); ?></p>
+    <p>User Id: <?php echo htmlspecialchars($user['id']); ?></p>
+    <p>Phone No: <?php echo htmlspecialchars($user['phone']); ?></p>
+    <p>Education Qualification : <?php echo htmlspecialchars($user['qualification']); ?></p>
+    <p>User ID: <?php echo htmlspecialchars($user['']); ?></p>
     <p>Status: <?php echo $user['is_admin'] ? 'Admin' : 'User'; ?></p>
 
     <a href="logout.php">Logout</a>
